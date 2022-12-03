@@ -14,7 +14,8 @@
         </template>
 
         <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-            You're logged in!
+           content
+
         </div>
     </AuthenticatedLayout>
 </template>
@@ -23,4 +24,5 @@
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
 import Button from '@/Components/Button.vue'
 import { GithubIcon } from '@/Components/Icons/brands'
+
 </script>
