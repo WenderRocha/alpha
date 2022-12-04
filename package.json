@@ -30,7 +30,9 @@
         "@fortawesome/free-regular-svg-icons": "^6.2.1",
         "@fortawesome/free-solid-svg-icons": "^6.2.1",
         "@fortawesome/vue-fontawesome": "^3.0.2",
+        "apexcharts": "^3.36.3",
         "flowbite": "^1.5.4",
-        "flowbite-vue": "^0.0.7"
+        "flowbite-vue": "^0.0.7",
+        "vue3-apexcharts": "^1.4.1"
     }
 }
