@@ -7,12 +7,12 @@
                 </h2>
 
                 <div>
-                    <Button @click="showModal" variant="primary"  class="items-center gap-2 max-w-xs" v-slot="{ iconSizeClasses }">
-                        <font-awesome-icon :class="iconSizeClasses" icon="fa-solid fa-bolt" />
+                    <Button @click="showModal" variant="primary" class="items-center gap-2 max-w-xs"
+                            v-slot="{ iconSizeClasses }">
+                        <font-awesome-icon :class="iconSizeClasses" icon="fa-solid fa-bolt"/>
                         <span>Lançar operação</span>
                     </Button>
                 </div>
-
 
             </div>
         </template>
@@ -89,7 +89,9 @@
                                 <div
                                     class="inline-block w-12 h-12 text-center rounded-md bg-gradient-to-tl from-cyan-500 to-teal-400">
                                     <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
-                                    <font-awesome-icon class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white" icon="fa-solid fa-bullseye" />
+                                    <font-awesome-icon
+                                        class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
+                                        icon="fa-solid fa-bullseye"/>
                                 </div>
                             </div>
                         </div>
@@ -152,61 +154,323 @@
             </div>
         </div>
 
+        <div class="overflow-x-auto relative mt-10">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="py-3 px-6">
+                        Trades
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Investimento
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Win
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Loss
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Renda
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Porcentagem
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Saldo banca
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        2
+                    </th>
+                    <td class="py-4 px-6">
+                        R$ 30,00
+                    </td>
+                    <td class="py-4 px-6">
+                        2
+                    </td>
+                    <td class="py-4 px-6">
+                        1
+                    </td>
+                    <td class="py-4 px-6">
+                        R$ 30,00
+                    </td>
+                    <td class="py-4 px-6">
+                        <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
+                            <font-awesome-icon class="text-emerald-500 mr-3" icon="fa-solid fa-up-long"/>
+                            <span class="font-semibold">4% </span>
+                        </p>
+                    </td>
+                    <td class="py-4 px-6">
+                        R$ 100,00
+                    </td>
+                </tr>
 
 
+                </tbody>
+            </table>
+        </div>
 
-        <Modal size="5xl" v-if="isShowModal">
-            <template #header>
-                <div class="flex justify-between">
-                    <div class="flex items-center text-lg">
-                        Terms of Service
+        <Modal size="7xl" v-if="isShowModal">
+
+            <template #body>
+                <div class="flex justify-end">
+                    <button @click="closeModal" type="button"
+                            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                        Cancelar
+                    </button>
+                </div>
+
+                <!---start take-->
+                <div v-show="false">
+                    <div class="bg-emerald-500 rounded-md p-6 justify-center items-center w-full">
+                        <h5 class="mb-6 text-2xl font-bold tracking-tight text-white dark:text-white text-center">
+                            Parabens! é Take!
+                        </h5>
+                        <p class="mb-6 font-bold tracking-tight text-white dark:text-white text-center">Você atingiu sua
+                            meta de hoje! respeite seu gerenciamento e volte amanhã.</p>
+                        <p class="font-bold tracking-tight text-white dark:text-white text-center">
+                            A ambição dever ser pelo "SER" e não pelo "TER".
+                            O "TER" é consequência do "SER" disciplinado, compromissado, focado, dedicado e determinado.
+                        </p>
+                        <div class="flex justify-center">
+                            <img class="trophy" src="/img/trophy.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--end take-->
+                <div v-if="true" class=" grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="w-full">
+                        <!--start management-->
+                        <div>
+                            <h5 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+                                Gerênciamento</h5>
+                            <div class="flex justify-center gap-4">
+
+                                <the-card href="#">
+                                    <div class="flex-auto p-4">
+                                        <div class="flex flex-row -mx-3">
+                                            <div class="flex-none w-2/3 max-w-full px-3">
+                                                <div>
+                                                    <h5 class="mb-2 text-sm font-semibold leading-tight text-gray-900 dark:text-white uppercase">
+                                                        Take Profit</h5>
+                                                    <h5 class="mb-2 font-bold dark:text-white">R$ 23,00</h5>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="px-3 text-right basis-1/3">
+                                                <div
+                                                    class="inline-block w-12 h-12 text-center rounded-md bg-emerald-500">
+                                                    <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
+                                                    <font-awesome-icon
+                                                        class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
+                                                        icon="fa-solid fa-bullseye"/>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="mt-6 w-full">
+                                            <Progress :labelProgress="true" labelPosition="inside" size="xl"
+                                                      color="green"
+                                                      label="" :progress="takeProgress"></Progress>
+                                        </div>
+
+                                    </div>
+
+                                </the-card>
+                                <the-card href="#">
+                                    <div class="flex-auto p-4">
+                                        <div class="flex flex-row -mx-3">
+                                            <div class="flex-none w-2/3 max-w-full px-3">
+                                                <div>
+                                                    <h5 class="mb-2 text-sm font-semibold leading-tight text-gray-900 dark:text-white uppercase">
+                                                        Stop loss</h5>
+                                                    <h5 class="mb-2 font-bold dark:text-white"> R$ 15,00</h5>
+                                                </div>
+                                            </div>
+                                            <div class="px-3 text-right basis-1/3">
+                                                <div class="inline-block w-12 h-12 text-center rounded-md bg-red-500">
+                                                    <font-awesome-icon
+                                                        class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
+                                                        icon="fa-solid fa-ban"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-6 w-full">
+                                            <Progress :labelProgress="true" labelPosition="inside" size="xl" color="red"
+                                                      label="" :progress="stopProgress"></Progress>
+                                        </div>
+                                    </div>
+
+                                </the-card>
+                            </div>
+                            <div class="flex justify-center mt-6">
+                                <img class="piggy" src="/img/piggy.svg" alt="">
+                            </div>
+                        </div>
+                        <!--end management-->
+
+                    </div>
+                    <div>
+                        <div class="grid md:grid-cols-2 md:gap-6">
+                            <div class="mb-6">
+                                <label for="countries"
+                                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ativo</label>
+                                <select v-model="tradeForm.asset" id="countries"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected disabled>Selecione o ativo</option>
+                                    <option value="EUR/USD">EUR/USD</option>
+                                    <option value="GBP/USD">GBP/USD</option>
+                                    <option value="EUR/USD">EUR/USD</option>
+                                    <option value="CAD/CHF">CAD/CHF</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <Input @keyup="calcIncome" v-model="tradeForm.payout" placeholder="87%" label="Payout"/>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 md:gap-6">
+                            <div class="mb-6">
+                                <Input @keyup="calcIncome" v-model="tradeForm.value" placeholder="R$ 50,00"
+                                       label="Entrada"/>
+                            </div>
+                            <div class="mb-6">
+                                <Input class="text-emerald-500" v-model="tradeForm.income" disabled placeholder=""
+                                       label="Lucro"/>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 md:gap-6">
+                            <div class="mb-6">
+                                <label for="countries"
+                                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operacional</label>
+                                <select v-model="tradeForm.operational" id="countries"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected disabled>Selecione o operacional</option>
+                                    <option value="Retração M5">Retração M5</option>
+                                    <option value="Suporte e Resistencia">Suporte e Resistência</option>
+                                    <option value="Retração">Retração</option>
+                                    <option value="Vela vela">Vela vela</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="countries"
+                                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de
+                                    ordem</label>
+                                <select v-model="tradeForm.orderType" id="countries"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected value="CALL">COMPRA</option>
+                                    <option value="PUT">VENDA</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <textarea v-model="tradeForm.observation" id="message" rows="4"
+                                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                      placeholder="Observações"></textarea>
+                        </div>
+
+                        <div class="flex gap-3 justify-center">
+                            <Button @click="scoreWin" variant="success" class="items-center gap-2 max-w-xs">
+                                Win
+                            </Button>
+
+                            <Button @click="scoreDraw" variant="warning" class="items-center gap-2 max-w-xs">
+                                Empate
+                            </Button>
+
+                            <Button @click="scoreLoss" variant="danger" class="items-center gap-2 max-w-xs">
+                                Loss
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </template>
-            <template #body>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                </p>
-            </template>
-            <template #footer>
-                <div class="flex justify-between">
-                    <button @click="closeModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
-                        Decline
-                    </button>
-                    <button @click="closeModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        I accept
-                    </button>
-                </div>
-            </template>
         </Modal>
+
     </AuthenticatedLayout>
 </template>
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
-import {TheCard, Modal} from 'flowbite-vue'
+import {TheCard, Modal, Input, Progress, Badge} from 'flowbite-vue'
 import Button from '@/Components/Button.vue'
-import { GithubIcon } from '@/Components/Icons/brands'
-import { ref } from 'vue'
+import {ref} from 'vue'
+import {useForm} from "@inertiajs/inertia-vue3";
 
+const tradeForm = useForm({
+    asset: 'EUR/USD',
+    payout: '82',
+    value: '',
+    income: '0',
+    orderType: 'CALL',
+    operational: 'Retração M5',
+    observation: 'Digite sua observação'
+})
+
+//START MANAGEMENT
+const takeProgress = 45;
+const stopProgress = 100;
+//END MANAGEMENT
+
+
+//START SCORE
+const win = ref(0);
+const draw = ref(0);
+const loss = ref(0);
+
+const formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+});
+
+const calcIncome = () => {
+    const incomeResult = (tradeForm.payout / 100) * tradeForm.value
+    tradeForm.income = formatter.format(incomeResult);
+}
+
+const scoreWin = () => {
+    win.value += 1;
+}
+const scoreDraw = () => {
+    draw.value += 1;
+}
+const scoreLoss = () => {
+    loss.value += 1;
+}
+//END SCORE
+
+//START MODAL
 const isShowModal = ref(false)
+
 function closeModal() {
     isShowModal.value = false
 }
+
 function showModal() {
     isShowModal.value = true
 }
 
+//END MODAL
 
+//PIE CHART
 const options = {
     labels: ['Vitorias', 'Derrotas'],
     colors: ['#00e396', '#ff788f']
 };
 const series = [25, 25]
+//PIE CHART
 
+//START BAR CHART
 const barSeries = [
     {
         name: 'Prejuizo',
@@ -217,8 +481,7 @@ const barSeries = [
         data: [12, 76, 85, 101, 98, 87, 105, 91, 114, 94, 80, 94]
     }
 ]
-
-let barOptions = {
+const barOptions = {
 
     chart: {
         type: 'bar',
@@ -258,6 +521,7 @@ let barOptions = {
         }
     }
 }
+//END BAR CHART
 
 
 </script>
@@ -265,5 +529,13 @@ let barOptions = {
 <style scoped>
 #barChart svg {
     background-color: transparent !important;
+}
+
+.piggy {
+    max-width: 200px;
+}
+
+.trophy {
+    max-width: 200px;
 }
 </style>

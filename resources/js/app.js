@@ -25,11 +25,13 @@ import {
     faArrowTrendDown,
     faArrowTrendUp,
     faBolt,
-    faBullseye
+    faBullseye,
+    faClipboard,
+    faTrophy
 } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faUserSecret, faCoins, faChartLine, faBan, faUpLong, faArrowTrendDown, faArrowTrendUp, faBolt, faBullseye)
+library.add(faUserSecret, faCoins, faChartLine, faBan, faUpLong, faArrowTrendDown, faArrowTrendUp, faBolt, faBullseye, faClipboard, faTrophy)
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'K UI';
 
