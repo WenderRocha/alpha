@@ -7,6 +7,8 @@ import {InertiaProgress} from '@inertiajs/progress';
 import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy/dist/vue.m';
 import VueApexCharts from "vue3-apexcharts"
+import 'v-calendar/dist/style.css';
+import VCalendar from 'v-calendar';
 /* Set up using Vue 3 */
 
 /* import the fontawesome core */
@@ -33,6 +35,8 @@ import {
 /* add icons to the library */
 library.add(faUserSecret, faCoins, faChartLine, faBan, faUpLong, faArrowTrendDown, faArrowTrendUp, faBolt, faBullseye, faClipboard, faTrophy)
 
+
+
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'K UI';
 
 createInertiaApp({
@@ -43,6 +47,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue, Ziggy)
             .use(VueApexCharts)
+            .use(VCalendar)
             .component('font-awesome-icon', FontAwesomeIcon)
             .mount(el);
     },

@@ -13,11 +13,21 @@
                         <span>Lançar operação</span>
                     </Button>
                 </div>
-
             </div>
         </template>
 
         <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
+            <v-date-picker is-expanded v-model="date" :attributes='calendarAttributes' />
+
+            <div class="mt-5 flex justify-center">
+                <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">WIN</span>
+                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">EMPATE</span>
+                <span class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">LOSS</span>
+                <span class="bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">SEM OPERAR</span>
+            </div>
+        </div>
+
+        <div class="mt-10 p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
                 <the-card href="#">
                     <div class="flex-auto p-4">
@@ -159,6 +169,9 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="py-3 px-6">
+                        Data
+                    </th>
+                    <th scope="col" class="py-3 px-6">
                         Trades
                     </th>
                     <th scope="col" class="py-3 px-6">
@@ -171,10 +184,13 @@
                         Loss
                     </th>
                     <th scope="col" class="py-3 px-6">
+                        Empate
+                    </th>
+                    <th scope="col" class="py-3 px-6">
                         Renda
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Porcentagem
+                        Percentual
                     </th>
                     <th scope="col" class="py-3 px-6">
                         Saldo banca
@@ -184,19 +200,29 @@
                 <tbody>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        2
+                        <span class="text-sm font-bold leading-normal text-black">04/12/2022</span>
+                    </th>
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <span class="text-sm font-bold leading-normal text-black"> 2</span>
                     </th>
                     <td class="py-4 px-6">
-                        R$ 30,00
+                        <span class="text-sm font-bold leading-normal text-purple-500"> R$ 100,00</span>
                     </td>
                     <td class="py-4 px-6">
-                        2
+                        <span class="text-sm font-bold leading-normal text-emerald-500">2 </span>
                     </td>
                     <td class="py-4 px-6">
-                        1
+                        <span class="text-sm font-bold leading-normal text-red-500">1 </span>
                     </td>
                     <td class="py-4 px-6">
-                        R$ 30,00
+                        <span class="text-sm font-bold leading-normal text-yellow-500">1 </span>
+                    </td>
+                    <td class="py-4 px-6">
+                        <div class="flex gap-2">
+                            <span v-show="true" class="text-sm font-bold leading-normal text-emerald-500">+ R$ 30,00 </span>
+                            <span v-show="false"
+                                  class="text-sm font-bold leading-normal text-red-500">- R$ 10,00 </span>
+                        </div>
                     </td>
                     <td class="py-4 px-6">
                         <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
@@ -205,7 +231,7 @@
                         </p>
                     </td>
                     <td class="py-4 px-6">
-                        R$ 100,00
+                        <span class="text-sm font-bold leading-normal text-cyan-500">+ R$ 100,00 </span>
                     </td>
                 </tr>
 
@@ -415,6 +441,34 @@ const tradeForm = useForm({
     operational: 'Retração M5',
     observation: 'Digite sua observação'
 })
+
+//START V-CALENDAR
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth();
+const calendarAttributes = [
+    {
+        key: 'loss',
+        highlight: 'red',
+        dates: new Date(year, month, 12),
+    },
+    {
+        key: 'win',
+        highlight: 'green',
+        dates: new Date(year, month, 1),
+    },
+    {
+        key: 'win',
+        highlight: 'green',
+        dates: new Date(year, month, 2),
+    },
+    {
+        key: 'otc',
+        highlight: 'gray',
+        dates: new Date(year, month, 3),
+    },
+]
+//END V-CALENDAR
 
 //START MANAGEMENT
 const takeProgress = 45;
