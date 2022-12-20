@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\ManagementController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -25,11 +26,32 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/app', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/gerenciamento', [ManagementController::class, 'index'])->middleware(['auth', 'verified'])->name('management.index');
+Route::name('app.')->group(function () {
+    Route::get('/carteiras', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('wallet');
+    Route::get('/receber', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('toReceive');
+    Route::get('/pagar', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('toPay');
+    Route::get('/fixas', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('fixed');
+});
+
+Route::name('gerenciamento.')->group(function () {
+    Route::get('/gerenciamento', [ManagementController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
+    Route::get('/operacional', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('operationals');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/components/buttons', function () {
     return Inertia::render('Components/Buttons');
