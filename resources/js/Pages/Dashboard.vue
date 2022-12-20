@@ -34,7 +34,7 @@
 
                         <div class="mt-5 flex justify-around">
                             <div>
-                                <Button iconOnly variant="danger" :size="size" title="Despesa" class="justify-center gap-2">
+                                <Button @click="showModal" iconOnly variant="danger" :size="size" title="Despesa" class="justify-center gap-2">
                                     <PlusCircleIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
                                     <span class="sr-only">Despesa</span>
                                 </Button>
@@ -104,6 +104,46 @@
       
         </div>
 
+        
+    <Modal size="lg" v-if="isShowModal" @close="closeModal">
+      <template #header>
+        <div class="flex items-center text-sm">
+          Nova Despesa
+        </div>
+      </template>
+      <template #body>
+        <div class="mb-6">
+            <Input placeholder="Ex: Aluguel" label="Descrição" />
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+            <div class="mb-6">
+                <Input placeholder="0,00" label="Valor" />
+            </div>
+            <div class="mb-6">
+                <Input placeholder="" label="Data" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div class="mb-6">
+                <Input placeholder="Minha carteira" label="Carteira" />
+            </div>
+            <div class="mb-6">
+                <Input placeholder="Moradia" label="Categoria" />
+            </div>
+        </div>
+            
+       
+      </template>
+      <template #footer>
+        <div class="flex justify-center">
+          <Button variant="danger" @click="closeModal" type="button">
+            Lançar despesa
+          </Button>
+        </div>
+      </template>
+    </Modal>
 
 
     </AuthenticatedLayout>
@@ -124,6 +164,14 @@ import {
     toggleDarkMode,
     sidebarState,
 } from '@/Composables'
+
+const isShowModal = ref(false)
+function closeModal() {
+  isShowModal.value = false
+}
+function showModal() {
+  isShowModal.value = true
+}
 
 const chartOptions = {
     chart: {
