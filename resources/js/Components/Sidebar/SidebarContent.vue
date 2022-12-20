@@ -4,6 +4,7 @@
         aria-label="main"
         class="relative flex flex-col flex-1 max-h-full gap-4 px-3"
     >
+
         <SidebarLink
             title="Dashboard"
             :href="route('dashboard')"
@@ -14,20 +15,80 @@
             </template>
         </SidebarLink>
 
-        <SidebarCollapsible title="Components" :active="route().current('components.*')">
+        <SidebarCollapsible title="Controle" :active="route('').current('app.*')">
             <template #icon>
-                <TemplateIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                <CalculatorIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </template>
+
+
+            <SidebarCollapsibleItem
+                :href="route('app.wallet')"
+                title="Carteiras"
+                :active="route().current('app.wallet')"
+            />
+
+            <SidebarCollapsibleItem
+                :href="route('app.toReceive')"
+                title="Receber"
+                :active="route().current('app.toReceive')"
+            />
+
+            <SidebarCollapsibleItem
+                :href="route('app.toPay')"
+                title="Pagar"
+                :active="route().current('app.toPay')"
+            />
+
+            <SidebarCollapsibleItem
+                :href="route('app.fixed')"
+                title="Fixas"
+                :active="route().current('app.fixed')"
+            />
+        </SidebarCollapsible>
+        <SidebarCollapsible title="Gerênciamento" :active="route('').current('gerenciamento.*')">
+            <template #icon>
+                <ChartSquareBarIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </template>
 
             <SidebarCollapsibleItem
-                :href="route('components.buttons')"
-                title="Buttons"
-                :active="route().current('components.buttons')"
+                :href="route('gerenciamento.index')"
+                title="Resumo"
+                :active="route().current('gerenciamento.index')"
             />
+
+            <SidebarCollapsibleItem
+                :href="route('gerenciamento.operationals')"
+                title="Operacional"
+                :active="route().current('gerenciamento.operationals')"
+            />
+
+
         </SidebarCollapsible>
 
+        <SidebarLink class="text-emerald-500"
+            title="Assinatura"
+            :href="route('app.toPay')"
+            :active="route().current('app.toPay')"
+        >
+            <template #icon>
+                <LightningBoltIcon  class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </template>
+        </SidebarLink>
+
+        <SidebarLink
+            title="Suporte"
+            :href="route('app.toPay')"
+            :active="route().current('app.toPay')"
+        >
+            <template #icon>
+                <SupportIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </template>
+        </SidebarLink>
+
+
+
         <!-- Examples -->
-        <!-- 
+        <!--
         => External link example
         <SidebarLink
             title="Github"
@@ -63,5 +124,5 @@ import SidebarLink from '@/Components/Sidebar/SidebarLink.vue'
 import { DashboardIcon } from '@/Components/Icons/outline'
 import SidebarCollapsible from '@/Components/Sidebar/SidebarCollapsible.vue'
 import SidebarCollapsibleItem from '@/Components/Sidebar/SidebarCollapsibleItem.vue'
-import { TemplateIcon } from "@heroicons/vue/outline";
+import { TemplateIcon, SupportIcon, CalculatorIcon, LightningBoltIcon, ChartSquareBarIcon   } from "@heroicons/vue/outline";
 </script>
