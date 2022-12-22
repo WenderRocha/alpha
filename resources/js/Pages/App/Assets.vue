@@ -20,11 +20,11 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="py-3 px-6">
-                    Nome
+                    Ativo
                 </th>
     
                 <th scope="col" class="py-3 px-6">
-                    Action
+                    Ação
                 </th>
             </tr>
         </thead>
@@ -54,6 +54,17 @@
         <template #body>
           <div class="mb-6">
             <Input placeholder="Ex: EUR/USD" label="Nome" />
+          </div>
+
+          <div class="mb-6">
+
+          </div>
+
+          <div class="mb-6">
+            <div class="flex items-center">
+              <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <label for="checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Opções Binárias</label>
+          </div>
           </div>
 
         </template>
