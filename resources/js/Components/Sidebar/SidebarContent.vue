@@ -62,6 +62,13 @@
                 :active="route().current('gerenciamento.operationals')"
             />
 
+            
+            <SidebarCollapsibleItem
+                :href="route('gerenciamento.assets')"
+                title="Ativos"
+                :active="route().current('gerenciamento.assets')"
+            />
+
 
         </SidebarCollapsible>
 

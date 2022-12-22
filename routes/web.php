@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\AssetsController;
 use App\Http\Controllers\OperationController;
 use App\Http\Controllers\ManagementController;
 
@@ -39,6 +40,7 @@ Route::name('app.')->group(function () {
 Route::name('gerenciamento.')->group(function () {
     Route::get('/gerenciamento', [ManagementController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
     Route::get('/operacional', [OperationController::class, 'index'])->middleware(['auth', 'verified'])->name('operationals');
+    Route::get('/ativos', [AssetsController::class, 'index'])->middleware(['auth', 'verified'])->name('assets');
 });
 
 
