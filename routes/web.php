@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\AppController;
-use App\Http\Controllers\ManagementController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\OperationController;
+use App\Http\Controllers\ManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::name('app.')->group(function () {
 
 Route::name('gerenciamento.')->group(function () {
     Route::get('/gerenciamento', [ManagementController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
-    Route::get('/operacional', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('operationals');
+    Route::get('/operacional', [OperationController::class, 'index'])->middleware(['auth', 'verified'])->name('operationals');
 });
 
 

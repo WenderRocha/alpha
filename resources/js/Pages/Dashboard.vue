@@ -8,52 +8,55 @@
 
         <div class="">
             <div class="grid md:grid-cols-3 gap-4">
-                    <div class="w-full p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-                        <h4 class="1xl text-1xl font-semibold leading-tight">Visão Geral</h4>
+                <div class="w-full p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
+                    <h4 class="1xl text-1xl font-semibold leading-tight">Visão Geral</h4>
 
-                        <div class="mt-5 flex justify-between">
-                            <div>
-                                <h6 class="text-sm">Renda mensal</h6>
-                                <h6 class="font-bold text-emerald-500">R$ + 2500,00</h6>
-                            </div>
-                            <div>
-                                <h6 class="text-sm">Despesa mensal</h6>
-                                <h6 class="font-bold text-red-500">R$ + 2500,00</h6>
-                            </div>
-            
+                    <div class="mt-5 flex justify-between">
+                        <div>
+                            <h6 class="text-sm">Renda mensal</h6>
+                            <h6 class="font-bold text-emerald-500">R$ + 2500,00</h6>
                         </div>
-                    </div>
-                    <div class="w-full p-6 overflow-hidden bg-emerald-500 rounded-md shadow-md dark:bg-dark-eval-1">
-                 
-                            <h5 class="mb-2 text-1xl font-bold tracking-tight text-white dark:text-white">Balanço do mês</h5>
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">R$ 1500,00</h5>
-                        
-                    </div>
-                    <div class="w-full p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-                        <h4 class="1xl text-1xl font-semibold leading-tight">Acesso Rápido</h4>
+                        <div>
+                            <h6 class="text-sm">Despesa mensal</h6>
+                            <h6 class="font-bold text-red-500">R$ + 2500,00</h6>
+                        </div>
 
-                        <div class="mt-5 flex justify-around">
-                            <div>
-                                <Button @click="showModal" iconOnly variant="danger" :size="size" title="Despesa" class="justify-center gap-2">
-                                    <PlusCircleIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-                                    <span class="sr-only">Despesa</span>
-                                </Button>
-                            </div>
-                            <div>
-                                <Button iconOnly variant="success" :size="size" title="Receita" class="justify-center gap-2">
-                                    <PlusCircleIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-                                    <span class="sr-only">Receita</span>
-                                </Button>
-                            </div>
-                            <div>
-                                <Button iconOnly :variant="variant" :size="size" title="Transferência" class="justify-center gap-2" v-slot="{ iconSizeClasses }">
-                                    <ArrowCircleRightIcon aria-hidden="true" :class="iconSizeClasses" />
-                                    <span class="sr-only">Transferência</span>
-                                </Button>
-                            </div>
+                    </div>
+                </div>
+                <div class="w-full p-6 overflow-hidden bg-emerald-500 rounded-md shadow-md dark:bg-dark-eval-1">
+
+                    <h5 class="mb-2 text-1xl font-bold tracking-tight text-white dark:text-white">Balanço do mês</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">R$ 1500,00</h5>
+
+                </div>
+                <div class="w-full p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
+                    <h4 class="1xl text-1xl font-semibold leading-tight">Acesso Rápido</h4>
+
+                    <div class="mt-5 flex justify-around">
+                        <div>
+                            <Button @click="showModal" iconOnly variant="danger" :size="size" title="Despesa"
+                                class="justify-center gap-2">
+                                <PlusCircleIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                                <span class="sr-only">Despesa</span>
+                            </Button>
+                        </div>
+                        <div>
+                            <Button iconOnly variant="success" :size="size" title="Receita"
+                                class="justify-center gap-2">
+                                <PlusCircleIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                                <span class="sr-only">Receita</span>
+                            </Button>
+                        </div>
+                        <div>
+                            <Button iconOnly :variant="variant" :size="size" title="Transferência"
+                                class="justify-center gap-2" v-slot="{ iconSizeClasses }">
+                                <ArrowCircleRightIcon aria-hidden="true" :class="iconSizeClasses" />
+                                <span class="sr-only">Transferência</span>
+                            </Button>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-4 mt-10">
@@ -61,7 +64,7 @@
                 <div>
                     <h5 class="text-sm">Despesa por categorias</h5>
                 </div>
-                <apexchart  type="pie" :options="CategoriesChartOptions" :series="categoryChartSeries"></apexchart>
+                <apexchart type="pie" :options="CategoriesChartOptions" :series="categoryChartSeries"></apexchart>
             </div>
             <div class="w-full p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
                 <div>
@@ -71,7 +74,7 @@
             </div>
         </div>
 
-        
+
         <div class="grid md:grid-cols-2 gap-4 mt-10">
             <div class="w-full p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
                 <div class="">
@@ -101,49 +104,49 @@
                     </Alert>
                 </div>
             </div>
-      
+
         </div>
 
-        
-    <Modal size="lg" v-if="isShowModal" @close="closeModal">
-      <template #header>
-        <div class="flex items-center text-sm">
-          Nova Despesa
-        </div>
-      </template>
-      <template #body>
-        <div class="mb-6">
-            <Input placeholder="Ex: Aluguel" label="Descrição" />
-        </div>
-        
-        <div class="grid grid-cols-2 gap-4">
-            <div class="mb-6">
-                <Input placeholder="0,00" label="Valor" />
-            </div>
-            <div class="mb-6">
-                <Input placeholder="" label="Data" />
-            </div>
-        </div>
 
-        <div class="grid grid-cols-2 gap-4">
-            <div class="mb-6">
-                <Input placeholder="Minha carteira" label="Carteira" />
-            </div>
-            <div class="mb-6">
-                <Input placeholder="Moradia" label="Categoria" />
-            </div>
-        </div>
-            
-       
-      </template>
-      <template #footer>
-        <div class="flex justify-center">
-          <Button variant="danger" @click="closeModal" type="button">
-            Lançar despesa
-          </Button>
-        </div>
-      </template>
-    </Modal>
+        <Modal size="lg" v-if="isShowModal" @close="closeModal">
+            <template #header>
+                <div class="flex items-center text-sm">
+                    Nova Despesa
+                </div>
+            </template>
+            <template #body>
+                <div class="mb-6">
+                    <Input placeholder="Ex: Aluguel" label="Descrição" />
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mb-6">
+                        <Input placeholder="0,00" label="Valor" />
+                    </div>
+                    <div class="mb-6">
+                        <Input placeholder="" type="date" label="Data" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mb-6">
+                        <Input placeholder="Minha carteira" label="Carteira" />
+                    </div>
+                    <div class="mb-6">
+                        <Input placeholder="Moradia" label="Categoria" />
+                    </div>
+                </div>
+
+
+            </template>
+            <template #footer>
+                <div class="flex justify-center">
+                    <Button variant="danger" @click="closeModal" type="button">
+                        Lançar despesa
+                    </Button>
+                </div>
+            </template>
+        </Modal>
 
 
     </AuthenticatedLayout>
@@ -151,11 +154,11 @@
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
-import {TheCard, Modal, Input, Progress, Badge, Alert} from 'flowbite-vue'
+import { TheCard, Modal, Input, Progress, Badge, Alert } from 'flowbite-vue'
 import Button from '@/Components/Button.vue'
-import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from 'vue'
-import {useForm} from "@inertiajs/inertia-vue3";
-import { MinusCircleIcon, PlusCircleIcon, ArrowCircleRightIcon, PresentationChartLineIcon, CalendarIcon      } from "@heroicons/vue/outline";
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
+import { useForm } from "@inertiajs/inertia-vue3";
+import { MinusCircleIcon, PlusCircleIcon, ArrowCircleRightIcon, PresentationChartLineIcon, CalendarIcon } from "@heroicons/vue/outline";
 
 import {
     handleScroll,
@@ -167,10 +170,10 @@ import {
 
 const isShowModal = ref(false)
 function closeModal() {
-  isShowModal.value = false
+    isShowModal.value = false
 }
 function showModal() {
-  isShowModal.value = true
+    isShowModal.value = true
 }
 
 const chartOptions = {
@@ -192,9 +195,9 @@ const chartOptions = {
         x: {
             format: 'dd/MM/yy HH:mm'
         },
+    }
 }
-}
-const series =  [
+const series = [
     {
         name: 'series1',
         data: [31, 40, 28, 51, 42, 109, 100]
