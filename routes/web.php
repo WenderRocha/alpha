@@ -41,6 +41,7 @@ Route::name('gerenciamento.')->group(function () {
     Route::get('/gerenciamento', [ManagementController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
     Route::get('/operacional', [OperationController::class, 'index'])->middleware(['auth', 'verified'])->name('operationals');
     Route::get('/ativos', [AssetsController::class, 'index'])->middleware(['auth', 'verified'])->name('assets');
+    Route::post('/ativos', [AssetsController::class, 'store'])->middleware(['auth', 'verified'])->name('assets');
 });
 
 

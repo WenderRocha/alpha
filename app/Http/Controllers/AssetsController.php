@@ -35,7 +35,8 @@ class AssetsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        sleep(5);
+        dd($request);
     }
 
     /**
