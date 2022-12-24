@@ -45,14 +45,23 @@
 
                 <div class="grid grid-cols-2 gap-4">
                     <div class="mb-6">
-                        <Input v-model="walletForm.name" placeholder="Quotex, Binomo, IQ Option..." label="Nome" />
+                        <Input v-model="walletForm.name" placeholder="Nubank, IQ Option..." label="Nome" />
                     </div>
                     <div class="mb-6">
                         <Input v-model="walletForm.initialDeposit" placeholder="R$ 150,00" label="Deposito inicial" />
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="mb-6">
+                        <label for="default-toggle" class="inline-flex relative items-center cursor-pointer">
+                            <input type="checkbox" v-model="binaryOptions" id="default-toggle" class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                            <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Carteira de opções binárias ?</span>
+                        </label>
+                    </div>
+
+                <div v-if="binaryOptions">
+                    <div class="grid grid-cols-2 gap-4">
                     <div class="mb-6">
                         <label for="managementType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tipo de Gerênciamento</label>
                         <select v-model="walletForm.managementType"  id="managementType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -102,9 +111,7 @@
                         </select>
                     </div>
                 </div>
-
-        
-
+                </div>
     
             </template>
             <template #footer>
@@ -125,7 +132,7 @@
                     <Button v-else @click="submitWalletForm" class="items-center gap-2 max-w-xs"
                         v-slot="{ iconSizeClasses }">
                         <CheckIcon aria-hidden="true" :class="iconSizeClasses" />
-                        <span>Adicionar</span>
+                        <span>abrir carteira</span>
                     </Button>
 
                 </div>
@@ -177,6 +184,8 @@ import {
 
 import { useToast } from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
+
+const binaryOptions = ref(false);
 
 const $toast = useToast();
 
