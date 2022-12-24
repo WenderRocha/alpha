@@ -273,185 +273,270 @@
         <Modal size="6xl" v-if="isShowModal" @close="closeModal">
 
             <template #body>
-                <div class="grid md:grid-cols-4 gap-3">
-                    <the-card href="#" class="w-full">
-                        <div class="flex-auto p-4">
-                            <div class="flex flex-row -mx-3">
-                                <div class="flex-none w-2/3 max-w-full px-3">
-                                    <div>
-                                        <h5
-                                            class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
-                                            Take</h5>
-                                        <h5 class="mb-2 font-bold dark:text-white">R$ 23,00</h5>
+
+                <tabs variant="underline" v-model="activeTab" class="p-5"> <!-- class appends to content DIV for all tabs -->
+                    <tab name="management" title="Gerênciamento">
+                        <div class="grid md:grid-cols-4 gap-3">
+                            <the-card href="#" class="w-full">
+                                <div class="flex-auto p-4">
+                                    <div class="flex flex-row -mx-3">
+                                        <div class="flex-none w-2/3 max-w-full px-3">
+                                            <div>
+                                                <h5
+                                                    class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
+                                                    Take</h5>
+                                                <h5 class="mb-2 font-bold dark:text-white">R$ 23,00</h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="px-3 text-right basis-1/3">
+                                            <div class="inline-block w-12 h-12 text-center rounded-md bg-emerald-500">
+                                                <i
+                                                    class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
+                                                <font-awesome-icon
+                                                    class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
+                                                    icon="fa-solid fa-bullseye" />
+                                            </div>
+                                        </div>
 
                                     </div>
-                                </div>
 
-                                <div class="px-3 text-right basis-1/3">
-                                    <div class="inline-block w-12 h-12 text-center rounded-md bg-emerald-500">
-                                        <i
-                                            class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
-                                        <font-awesome-icon
-                                            class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                            icon="fa-solid fa-bullseye" />
+                                    <div class="mt-6 w-full">
+                                        <Progress :labelProgress="true" labelPosition="outside" size="xl" color="green" label=""
+                                            :progress="(takeProgress > 100) ? 100 : takeProgress"></Progress>
+                                    </div>
+
+                                </div>
+                            </the-card>
+
+                            <the-card href="#" class="w-full">
+                                <div class="flex-auto p-4">
+                                    <div class="flex flex-row -mx-3">
+                                        <div class="flex-none w-2/3 max-w-full px-3">
+                                            <div>
+                                                <h5
+                                                    class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
+                                                    Stop</h5>
+                                                <h5 class="mb-2 font-bold dark:text-white"> R$ 15,00</h5>
+                                            </div>
+                                        </div>
+                                        <div class="px-3 text-right basis-1/3">
+                                            <div class="inline-block w-12 h-12 text-center rounded-md bg-red-500">
+                                                <font-awesome-icon
+                                                    class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
+                                                    icon="fa-solid fa-ban" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6 w-full">
+                                        <Progress :labelProgress="true" labelPosition="outside" size="xl" color="red" label=""
+                                            :progress="stopProgress"></Progress>
                                     </div>
                                 </div>
+                            </the-card>
 
-                            </div>
+                            <the-card href="#" class="w-full">
+                                <div class="flex-auto p-4">
+                                    <div class="flex flex-row -mx-3">
+                                        <div class="flex-none w-2/3 max-w-full px-3">
+                                            <div>
+                                                <h5
+                                                    class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
+                                                    Banca</h5>
+                                                <h5 class="mb-2 font-bold dark:text-white">R$ 23,00</h5>
 
-                            <div class="mt-6 w-full">
-                                <Progress :labelProgress="true" labelPosition="outside" size="xl" color="green" label=""
-                                    :progress="(takeProgress > 100) ? 100 : takeProgress"></Progress>
-                            </div>
-
-                        </div>
-                    </the-card>
-
-                    <the-card href="#" class="w-full">
-                        <div class="flex-auto p-4">
-                            <div class="flex flex-row -mx-3">
-                                <div class="flex-none w-2/3 max-w-full px-3">
-                                    <div>
-                                        <h5
-                                            class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
-                                            Stop</h5>
-                                        <h5 class="mb-2 font-bold dark:text-white"> R$ 15,00</h5>
+                                            </div>
+                                        </div>
+                                        <div class="px-3 text-right basis-1/3">
+                                            <div class="inline-block w-12 h-12 text-center rounded-md bg-cyan-500">
+                                                <i
+                                                    class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
+                                                <font-awesome-icon
+                                                    class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
+                                                    icon="fa-solid fa-bullseye" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="px-3 text-right basis-1/3">
-                                    <div class="inline-block w-12 h-12 text-center rounded-md bg-red-500">
-                                        <font-awesome-icon
-                                            class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                            icon="fa-solid fa-ban" />
+                                <div class="">
+                                    <Progress :labelProgress="true" labelPosition="outside" size="xl" :color="plusOne"
+                                        :label="plusOneString"
+                                        :progress="(ManagementPieSeries > 100) ? 100 : ManagementPieSeries"></Progress>
+                                </div>
+                            </the-card>
+
+                            <the-card href="#" class="w-full">
+                                <div class=" p-4 justify-center text-center">
+                                    <h5
+                                        class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
+                                        Placar</h5>
+                                </div>
+                                <div class="flex justify-center justify-content-around">
+                                    <span class="text-2xl font-bold leading-normal text-emerald-500 mr-2">{{ win }} -</span>
+
+                                    <span class="text-2xl font-bold leading-normal text-red-500 mr-2">{{
+                                            loss
+                                    }} -</span>
+
+                                    <span class="text-2xl font-bold leading-normal text-yellow-500 mr-2">{{
+                                            draw
+                                    }} </span>
+                                </div>
+                            </the-card>
+                        </div>
+                        <div class="mt-5">
+                            <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
+                                <div class="grid md:grid-cols-6 md:gap-6">
+                                    <div class="mb-6">
+                                        <label for="countries"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ativo</label>
+                                        <select v-model="tradeForm.asset" id="countries"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <option selected disabled>Selecione o ativo</option>
+                                            <option value="EUR/USD">EUR/USD</option>
+                                            <option value="GBP/USD">GBP/USD</option>
+                                            <option value="EUR/USD">EUR/USD</option>
+                                            <option value="CAD/CHF">CAD/CHF</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-6">
+                                        <Input @keyup="calcIncome" v-model="tradeForm.payout" placeholder="87%"
+                                            label="Payout" />
+                                    </div>
+                                    <div class="mb-6">
+                                        <Input @keyup="calcIncome" v-model="tradeForm.value" placeholder="R$ 50,00"
+                                            label="Entrada" />
+                                    </div>
+                                    <div class="mb-6">
+                                        <Input class=" font-bold text-emerald-500" v-model="tradeForm.income" disabled
+                                            placeholder="" label="Lucro" />
+                                    </div>
+                                    <div class="mb-6">
+                                        <label for="countries"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operacional</label>
+                                        <select v-model="tradeForm.operational" id="countries"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <option selected disabled>Selecione o operacional</option>
+                                            <option value="Retração M5">Retração M5</option>
+                                            <option value="Suporte e Resistencia">Suporte e Resistência</option>
+                                            <option value="Retração">Retração</option>
+                                            <option value="Vela vela">Vela vela</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-6">
+                                        <label for="countries"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de
+                                            ordem</label>
+                                        <select v-model="tradeForm.orderType" id="countries"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <option selected value="CALL">COMPRA</option>
+                                            <option value="PUT">VENDA</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-6 w-full">
-                                <Progress :labelProgress="true" labelPosition="outside" size="xl" color="red" label=""
-                                    :progress="stopProgress"></Progress>
+                        </div>
+                        <div class="grid md:grid-cols-2">
+                            <div class="mt-5 p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-2">
+                                <textarea v-model="tradeForm.observation" id="message" rows="4"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Observações"></textarea>
+                            </div>
+                            <div class="mt-5 flex items-center justify-center gap-4 ">
+                                <Button @click="scoreWin" :disabled="tradeForm.processing" variant="success" size="lg" class="uppercase">
+                                    Win
+                                </Button>
+                                <Button @click="scoreDraw" :disabled="tradeForm.processing" variant="warning" size="lg" class="uppercase">
+                                    Empate
+                                </Button>
+                                <Button @click="scoreLoss" :disabled="tradeForm.processing" variant="danger" size="lg" class="uppercase">
+                                    Loss
+                                </Button>
                             </div>
                         </div>
-                    </the-card>
+                    </tab>
+                    <tab name="strategy" title="Estratégias">
+                        <tabs v-model="activeTabStrategy" class="p-5"> <!-- class appends to content DIV for all tabs -->
+                            <tab name="2x1" title="2x1">
 
-                    <the-card href="#" class="w-full">
-                        <div class="flex-auto p-4">
-                            <div class="flex flex-row -mx-3">
-                                <div class="flex-none w-2/3 max-w-full px-3">
-                                    <div>
-                                        <h5
-                                            class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
-                                            Banca</h5>
-                                        <h5 class="mb-2 font-bold dark:text-white">R$ 23,00</h5>
-
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="mb-6">
+                                        <Input @keyup="calcIncome" v-model="tradeForm.value" placeholder="R$ 50,00"
+                                            label="Entrada" />
+                                    </div>
+                                    <div class="mb-6">
+                                        <Input @keyup="calcIncome" v-model="tradeForm.payout" placeholder="87%"
+                                            label="Payout" />
                                     </div>
                                 </div>
-                                <div class="px-3 text-right basis-1/3">
-                                    <div class="inline-block w-12 h-12 text-center rounded-md bg-cyan-500">
-                                        <i
-                                            class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
-                                        <font-awesome-icon
-                                            class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                            icon="fa-solid fa-bullseye" />
-                                    </div>
+                                
+                                <div class="overflow-x-auto relative">
+                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                            <tr>
+                                                <th scope="col" class="py-3 px-6">
+                                                    Entrada
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    Payout
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    Lucro
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {{ tradeForm.value }}
+                                                </th>
+                                                <td class="py-4 px-6">
+                                                    {{ tradeForm.payout }} 
+                                                </td>
+                                                <td class="py-4 px-6">
+                                                    {{  tradeForm.income }}
+                                                </td>
+                                           
+                                            </tr>
+                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {{ nextEntry }}
+                                                </th>
+                                                <td class="py-4 px-6">
+                                                    {{ tradeForm.payout }} 
+                                                </td>
+                                                <td class="py-4 px-6">
+                                                    {{  nextEntryIncome }}
+                                                </td>
+                             
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="">
-                            <Progress :labelProgress="true" labelPosition="outside" size="xl" :color="plusOne"
-                                :label="plusOneString"
-                                :progress="(ManagementPieSeries > 100) ? 100 : ManagementPieSeries"></Progress>
-                        </div>
-                    </the-card>
 
-                    <the-card href="#" class="w-full">
-                        <div class=" p-4 justify-center text-center">
-                            <h5
-                                class="mb-2 text-1xl font-semibold leading-tight text-gray-900 dark:text-white uppercase">
-                                Placar</h5>
-                        </div>
-                        <div class="flex justify-center justify-content-around">
-                            <span class="text-2xl font-bold leading-normal text-emerald-500 mr-2">{{ win }} -</span>
+                            </tab>
+                            <tab name="second" title="Second">
+                            Lorem...
+                            </tab>
+                            <tab name="third" title="Third">
+                            Lorem...
+                            </tab>
+                            <tab name="fourth" title="Fourth" :disabled="true">
+                            Lorem...
+                            </tab>
+                        </tabs>
+                    </tab>
+                    <tab name="third" title="Third">
+                    Lorem...
+                    </tab>
+                    <tab name="fourth" title="Fourth" :disabled="true">
+                    Lorem...
+                    </tab>
+                </tabs>
 
-                            <span class="text-2xl font-bold leading-normal text-red-500 mr-2">{{
-                                    loss
-                            }} -</span>
-
-                            <span class="text-2xl font-bold leading-normal text-yellow-500 mr-2">{{
-                                    draw
-                            }} </span>
-                        </div>
-                    </the-card>
-                </div>
-                <div class="mt-5">
-                    <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-                        <div class="grid md:grid-cols-6 md:gap-6">
-                            <div class="mb-6">
-                                <label for="countries"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ativo</label>
-                                <select v-model="tradeForm.asset" id="countries"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Selecione o ativo</option>
-                                    <option value="EUR/USD">EUR/USD</option>
-                                    <option value="GBP/USD">GBP/USD</option>
-                                    <option value="EUR/USD">EUR/USD</option>
-                                    <option value="CAD/CHF">CAD/CHF</option>
-                                </select>
-                            </div>
-                            <div class="mb-6">
-                                <Input @keyup="calcIncome" v-model="tradeForm.payout" placeholder="87%"
-                                    label="Payout" />
-                            </div>
-                            <div class="mb-6">
-                                <Input @keyup="calcIncome" v-model="tradeForm.value" placeholder="R$ 50,00"
-                                    label="Entrada" />
-                            </div>
-                            <div class="mb-6">
-                                <Input class=" font-bold text-emerald-500" v-model="tradeForm.income" disabled
-                                    placeholder="" label="Lucro" />
-                            </div>
-                            <div class="mb-6">
-                                <label for="countries"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operacional</label>
-                                <select v-model="tradeForm.operational" id="countries"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Selecione o operacional</option>
-                                    <option value="Retração M5">Retração M5</option>
-                                    <option value="Suporte e Resistencia">Suporte e Resistência</option>
-                                    <option value="Retração">Retração</option>
-                                    <option value="Vela vela">Vela vela</option>
-                                </select>
-                            </div>
-                            <div class="mb-6">
-                                <label for="countries"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de
-                                    ordem</label>
-                                <select v-model="tradeForm.orderType" id="countries"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected value="CALL">COMPRA</option>
-                                    <option value="PUT">VENDA</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-2">
-                    <div class="mt-5 p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-2">
-                        <textarea v-model="tradeForm.observation" id="message" rows="4"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Observações"></textarea>
-                    </div>
-                    <div class="mt-5 flex items-center justify-center gap-4 ">
-                        <Button @click="scoreWin" variant="success" size="lg" class="uppercase">
-                            Win
-                        </Button>
-                        <Button @click="scoreDraw" variant="warning" size="lg" class="uppercase">
-                            Empate
-                        </Button>
-                        <Button @click="scoreLoss" variant="danger" size="lg" class="uppercase">
-                            Loss
-                        </Button>
-                    </div>
-                </div>
+ 
             </template>
         </Modal>
 
@@ -460,22 +545,74 @@
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
-import { TheCard, Modal, Input, Progress, Badge } from 'flowbite-vue'
+import { TheCard, Modal, Input, Progress, Badge, Tabs, Tab  } from 'flowbite-vue'
 import Button from '@/Components/Button.vue'
 import { computed, reactive, ref, watch } from 'vue'
 import { useForm } from "@inertiajs/inertia-vue3";
 import { isDark } from '@/Composables'
 import { ChartBarIcon } from "@heroicons/vue/outline";
+import { useToast } from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+
+const formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+});
+
+
+
+const activeTab = ref('management')
+const activeTabStrategy = ref('2x1')
+
+const $toast = useToast();
 
 const tradeForm = useForm({
     asset: 'EUR/USD',
     payout: '82',
-    value: '',
+    value: '26',
     income: '0',
     orderType: 'CALL',
     operational: 'Retração M5',
-    observation: 'Digite sua observação'
+    observation: 'Digite sua observação',
+    tradeResult: ''
 })
+
+const nextEntry = ref(0);
+const nextEntryIncome = ref(0);
+
+
+
+function submitTradeForm(result) {
+    tradeForm.post('/gerenciamento', {
+    onSuccess: (page) => {
+
+        if(result === 'win') {
+            $toast.success(`é Take + ${tradeForm.income}`, {
+                // override the global option
+                position: 'top-right'
+            })
+        }else if(result === 'loss') {
+            $toast.error(`Loss - ${formatter.format(tradeForm.value)}`, {
+                // override the global option
+                position: 'top-right'
+            })
+        }else{
+            $toast.warning(`Empate = R$ 0,0`, {
+                // override the global option
+                position: 'top-right'
+            })
+        }
+    },
+
+    onError: (errors) => {
+      $toast.error('Oops, tente novamente mais tarde...', {
+        // override the global option
+        position: 'top-right'
+      })
+    },
+  })
+}
 
 const management = useForm({
     date: '2022/12/05',
@@ -570,11 +707,6 @@ const win = ref(0);
 const draw = ref(0);
 const loss = ref(0);
 
-const formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    minimumFractionDigits: 2,
-});
 
 //GERENCIAMENTO RISCO BANCA
 let ManagementPieSeries = ref(0)
@@ -583,19 +715,34 @@ let ManagementPieSeriesMessage = ref('Aceitável')
 
 const calcIncome = () => {
     const incomeResult = (tradeForm.payout / 100) * tradeForm.value
-    tradeForm.income = formatter.format(incomeResult);
 
+    nextEntry.value =  parseInt(tradeForm.value) + incomeResult
+    nextEntryIncome.value = formatter.format((tradeForm.payout / 100) * nextEntry.value); 
+
+    tradeForm.income = formatter.format(incomeResult);
+    
     ManagementPieSeries.value = ((tradeForm.value === '') ? 0 : parseInt(tradeForm.value) * 100) / 25
+
+    console.log(parseInt(tradeForm.value))
+    console.log(parseInt(incomeResult))
 }
+
+calcIncome();
 
 const scoreWin = () => {
     win.value += 1;
+    tradeForm.tradeResult = 'win'
+    submitTradeForm('win')
 }
 const scoreDraw = () => {
     draw.value += 1;
+    tradeForm.tradeResult = 'draw'
+    submitTradeForm('draw')
 }
 const scoreLoss = () => {
     loss.value += 1;
+    tradeForm.tradeResult = 'loss'
+    submitTradeForm('loss')
 }
 //END SCORE
 
@@ -605,7 +752,6 @@ const isShowModal = ref(false)
 function closeModal() {
     isShowModal.value = false
 }
-
 function showModal() {
     isShowModal.value = true
 }
@@ -744,7 +890,6 @@ watch(isDark, (isDark) => {
                 mode: 'dark'
             }
         }
-
     } else {
 
         options = {

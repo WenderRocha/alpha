@@ -35,7 +35,7 @@ class ManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('options.index');
     }
 
     /**

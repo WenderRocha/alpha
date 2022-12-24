@@ -87,8 +87,7 @@
             Cancelar
           </button>
 
-          <Button v-if="assetsForm.processing" :disabled="assetsForm.processing" class="items-center gap-2 max-w-xs"
-            v-slot="{ iconSizeClasses }">
+          <Button v-if="assetsForm.processing" :disabled="assetsForm.processing" class="items-center gap-2 max-w-xs">
             <div class="flex items-center">
               <spinner class="mr-2" color="white" size="8" />
               <span>Aguarde...</span>
