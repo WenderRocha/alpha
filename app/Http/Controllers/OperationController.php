@@ -35,7 +35,7 @@ class OperationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('gerenciamento.operationals');
     }
 
     /**

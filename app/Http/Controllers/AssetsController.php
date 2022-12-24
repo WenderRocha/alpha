@@ -35,8 +35,9 @@ class AssetsController extends Controller
      */
     public function store(Request $request)
     {
-        sleep(5);
-        dd($request);
+        //sleep(5);
+        return redirect()->route('gerenciamento.assets');
+     
     }
 
     /**

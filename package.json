@@ -34,6 +34,7 @@
         "flowbite": "^1.5.4",
         "flowbite-vue": "^0.0.7",
         "v-calendar": "^3.0.0-alpha.8",
+        "vue-toast-notification": "^3.0.4",
         "vue3-apexcharts": "^1.4.1"
     }
 }
