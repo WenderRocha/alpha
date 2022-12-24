@@ -219,7 +219,7 @@
                             Renda
                         </th>
                         <th scope="col" class="py-3 px-6">
-                            Percentual
+                            %
                         </th>
                         <th scope="col" class="py-3 px-6">
                             Saldo
@@ -266,17 +266,12 @@
                         </td>
                     </tr>
 
-
                 </tbody>
             </table>
         </div>
 
         <Modal size="6xl" v-if="isShowModal" @close="closeModal">
-            <template #header>
-                <div class="flex items-center text-lg">
-                    <ChartBarIcon class="text-gray-600 flex-shrink-0 w-6 h-6 mr-3" aria-hidden="true" /> Trade
-                </div>
-            </template>
+
             <template #body>
                 <div class="grid md:grid-cols-4 gap-3">
                     <the-card href="#" class="w-full">
@@ -331,7 +326,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="mt-6 w-full">
                                 <Progress :labelProgress="true" labelPosition="outside" size="xl" color="red" label=""
                                     :progress="stopProgress"></Progress>
@@ -468,15 +462,9 @@
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
 import { TheCard, Modal, Input, Progress, Badge } from 'flowbite-vue'
 import Button from '@/Components/Button.vue'
-import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
+import { computed, reactive, ref, watch } from 'vue'
 import { useForm } from "@inertiajs/inertia-vue3";
-import {
-    handleScroll,
-    isDark,
-    scrolling,
-    toggleDarkMode,
-    sidebarState,
-} from '@/Composables'
+import { isDark } from '@/Composables'
 import { ChartBarIcon } from "@heroicons/vue/outline";
 
 const tradeForm = useForm({
@@ -496,7 +484,6 @@ const management = useForm({
 
 //START V-CALENDAR
 let calendarDarkTheme = ref(isDark);
-
 
 const calendarDate = new Date();
 const calendarAttributes = [
@@ -590,11 +577,6 @@ const formatter = new Intl.NumberFormat("pt-BR", {
 });
 
 //GERENCIAMENTO RISCO BANCA
-let ManagementPieOtions = reactive({
-    labels: ['Saldo da banca', 'Vou perder'],
-    colors: ['#00e396', '#ff788f'],
-});
-
 let ManagementPieSeries = ref(0)
 let ManagementPieSeriesMessage = ref('Aceitável')
 //GERENCIAMENTO RISCO BANCA
@@ -627,7 +609,6 @@ function closeModal() {
 function showModal() {
     isShowModal.value = true
 }
-
 //END MODAL
 
 //PIE CHART
@@ -802,17 +783,12 @@ const plusOne = computed(() => {
 })
 
 
-
-
 let plusOneString = computed({
     get: () => ManagementPieSeriesMessage.value,
     set: (val) => {
         ManagementPieSeriesMessage.value = val
     }
 })
-
-console.log(plusOne)
-console.log(plusOneString)
 
 
 </script>

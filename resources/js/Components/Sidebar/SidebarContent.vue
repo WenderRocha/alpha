@@ -45,28 +45,28 @@
                 :active="route().current('app.fixed')"
             />
         </SidebarCollapsible>
-        <SidebarCollapsible title="Gerênciamento" :active="route('').current('gerenciamento.*')">
+        <SidebarCollapsible title="Opções" :active="route('').current('options.*')">
             <template #icon>
                 <ChartSquareBarIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </template>
 
             <SidebarCollapsibleItem
-                :href="route('gerenciamento.index')"
+                :href="route('options.index')"
                 title="Resumo"
-                :active="route().current('gerenciamento.index')"
+                :active="route().current('options.index')"
             />
 
             <SidebarCollapsibleItem
-                :href="route('gerenciamento.operationals')"
+                :href="route('options.operationals')"
                 title="Operacional"
-                :active="route().current('gerenciamento.operationals')"
+                :active="route().current('options.operationals')"
             />
 
             
             <SidebarCollapsibleItem
-                :href="route('gerenciamento.assets')"
+                :href="route('options.assets')"
                 title="Ativos"
-                :active="route().current('gerenciamento.assets')"
+                :active="route().current('options.assets')"
             />
 
 

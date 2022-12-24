@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\AssetsController;
+use App\Http\Controllers\WalletController;
 use App\Http\Controllers\OperationController;
 use App\Http\Controllers\ManagementController;
 
@@ -31,13 +32,14 @@ Route::get('/', function () {
 Route::get('/dashboard', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::name('app.')->group(function () {
-    Route::get('/carteiras', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('wallet');
+    Route::get('/carteiras', [WalletController::class, 'index'])->middleware(['auth', 'verified'])->name('wallet');
+    Route::post('/carteiras', [WalletController::class, 'store'])->middleware(['auth', 'verified'])->name('wallet');
     Route::get('/receber', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('toReceive');
     Route::get('/pagar', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('toPay');
     Route::get('/fixas', [AppController::class, 'index'])->middleware(['auth', 'verified'])->name('fixed');
 });
 
-Route::name('gerenciamento.')->group(function () {
+Route::name('options.')->group(function () {
     Route::get('/gerenciamento', [ManagementController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
     Route::get('/operacional', [OperationController::class, 'index'])->middleware(['auth', 'verified'])->name('operationals');
     Route::post('/operacional', [OperationController::class, 'store'])->middleware(['auth', 'verified'])->name('operationals');

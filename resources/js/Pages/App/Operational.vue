@@ -24,33 +24,31 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum animi</p>
           <div class="mt-5 flex justify-around">
             <div>
-              <Button @click="showModalDelete" iconOnly variant="danger" title="Apagar"
-                class="justify-center gap-2">
+              <Button @click="showModalDelete" iconOnly variant="danger" title="Apagar" class="justify-center gap-2">
                 <TrashIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
                 <span class="sr-only">Apagar</span>
               </Button>
             </div>
             <div>
-              <Button iconOnly variant="info"  title="Visualizar" class="justify-center gap-2">
+              <Button iconOnly variant="info" title="Visualizar" class="justify-center gap-2">
                 <EyeIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
                 <span class="sr-only">Receita</span>
               </Button>
             </div>
             <div>
-              <Button iconOnly  title="Estudar" class="justify-center gap-2"
-                v-slot="{ iconSizeClasses }">
+              <Button iconOnly title="Estudar" class="justify-center gap-2" v-slot="{ iconSizeClasses }">
                 <AcademicCapIcon aria-hidden="true" :class="iconSizeClasses" />
                 <span class="sr-only">Estudar</span>
               </Button>
             </div>
           </div>
         </the-card>
-     
+
 
       </div>
     </div>
 
-    <Modal  v-if="isShowModal" @close="closeModal">
+    <Modal v-if="isShowModal" @close="closeModal">
       <template #header>
         <div class="flex items-center text-lg">
           Novo Operacional
@@ -79,15 +77,16 @@
             Cancelar
           </button>
 
-          <Button v-if="operationalForm.processing" :disabled="operationalForm.processing" class="items-center gap-2 max-w-xs"
-            v-slot="{ iconSizeClasses }">
+          <Button v-if="operationalForm.processing" :disabled="operationalForm.processing"
+            class="items-center gap-2 max-w-xs" v-slot="{ iconSizeClasses }">
             <div class="flex items-center">
               <spinner class="mr-2" color="white" size="8" />
               <span>Aguarde...</span>
             </div>
           </Button>
 
-          <Button v-else @click="submitOperationalForm" class="items-center gap-2 max-w-xs" v-slot="{ iconSizeClasses }">
+          <Button v-else @click="submitOperationalForm" class="items-center gap-2 max-w-xs"
+            v-slot="{ iconSizeClasses }">
             <CheckIcon aria-hidden="true" :class="iconSizeClasses" />
             <span>Adicionar</span>
           </Button>
@@ -105,7 +104,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Deseja realmente excluir o operacional?</h3>
+          <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Deseja realmente excluir o operacional?
+          </h3>
           <button data-modal-toggle="popup-modal" type="button"
             class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
             Sim, Deletar
@@ -123,7 +123,7 @@
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
-import { TheCard, Modal, Input, Progress, Badge, Alert, Toast, Spinner  } from 'flowbite-vue'
+import { TheCard, Modal, Input, Progress, Badge, Alert, Toast, Spinner } from 'flowbite-vue'
 import Button from '@/Components/Button.vue'
 import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { useForm } from "@inertiajs/inertia-vue3";

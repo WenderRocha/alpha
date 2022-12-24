@@ -99,9 +99,6 @@
             <CheckIcon aria-hidden="true" :class="iconSizeClasses" />
             <span>Adicionar</span>
           </Button>
-
-
-
         </div>
       </template>
     </Modal>
