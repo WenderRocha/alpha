@@ -8,8 +8,8 @@
 
                 <div>
                     <Button @click="showModal" variant="primary" class="items-center gap-2 max-w-xs"
-                        v-slot="{ iconSizeClasses }">
-                        <font-awesome-icon :class="iconSizeClasses" icon="fa-solid fa-bolt" />
+                            v-slot="{ iconSizeClasses }">
+                        <font-awesome-icon :class="iconSizeClasses" icon="fa-solid fa-bolt"/>
                         <span>Lançar operação</span>
                     </Button>
                 </div>
@@ -20,7 +20,7 @@
             <div class="grid gid-cols-2 md:grid-cols-2 gap-3">
                 <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
                     <v-date-picker :is-dark="calendarDarkTheme" is-expanded v-model="management.date" mode="date"
-                        :timezone="management.timezone" :attributes='calendarAttributes' data="YYYY/MM/DD" />
+                                   :timezone="management.timezone" :attributes='calendarAttributes' data="YYYY/MM/DD"/>
 
                     <div class="mt-5 flex justify-center">
                         <span
@@ -68,7 +68,7 @@
                                     class="inline-block w-14 h-14 text-center rounded-md bg-gradient-to-tl from-blue-500 to-violet-500">
                                     <font-awesome-icon
                                         class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                        icon="fa-solid fa-coins" />
+                                        icon="fa-solid fa-coins"/>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                                     <div class="flex gap-2">
                                         <h5 class="mb-2 font-bold dark:text-white">R$ 53,00</h5>
                                         <span v-show="true"
-                                            class="text-sm font-bold leading-normal text-emerald-500">+55% </span>
+                                              class="text-sm font-bold leading-normal text-emerald-500">+55% </span>
                                         <span v-show="false" class="text-sm font-bold leading-normal text-red-500">-55%
                                         </span>
                                     </div>
@@ -98,12 +98,12 @@
                                 <div v-show="true" class="inline-block w-14 h-14 text-center rounded-md bg-green-400">
                                     <font-awesome-icon
                                         class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                        icon="fa-solid fa-arrow-trend-up" />
+                                        icon="fa-solid fa-arrow-trend-up"/>
                                 </div>
                                 <div v-show="false" class="inline-block w-14 h-14 text-center rounded-md bg-red-400">
                                     <font-awesome-icon
                                         class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                        icon="fa-solid fa-arrow-trend-down" />
+                                        icon="fa-solid fa-arrow-trend-down"/>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                     <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
                                     <font-awesome-icon
                                         class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                        icon="fa-solid fa-bullseye" />
+                                        icon="fa-solid fa-bullseye"/>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                                 <div class="inline-block w-14 h-14 text-center rounded-md bg-red-500">
                                     <font-awesome-icon
                                         class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                        icon="fa-solid fa-ban" />
+                                        icon="fa-solid fa-ban"/>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                 <div class="mb-5">
                     <h6 class="capitalize dark:text-white">Rendimento anual </h6>
                     <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
-                        <font-awesome-icon class="text-emerald-500 mr-3" icon="fa-solid fa-up-long" />
+                        <font-awesome-icon class="text-emerald-500 mr-3" icon="fa-solid fa-up-long"/>
                         <span class="font-semibold">4% more</span> in 2021
                     </p>
                 </div>
@@ -182,7 +182,7 @@
                 <div class="mb-5">
                     <h6 class="capitalize dark:text-white">Desempenho mensal </h6>
                     <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
-                        <font-awesome-icon class="text-emerald-500 mr-3" icon="fa-solid fa-up-long" />
+                        <font-awesome-icon class="text-emerald-500 mr-3" icon="fa-solid fa-up-long"/>
                         <span class="font-semibold">4% more</span> in 2021
                     </p>
                 </div>
@@ -196,75 +196,75 @@
         <div class="overflow-x-auto relative mt-10">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="py-3 px-6">
-                            Data
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Trades
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Investimento
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Win
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Loss
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Empate
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Renda
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            %
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Saldo
-                        </th>
-                    </tr>
+                <tr>
+                    <th scope="col" class="py-3 px-6">
+                        Data
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Trades
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Investimento
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Win
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Loss
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Empate
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Renda
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        %
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Saldo
+                    </th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             <span
                                 class="text-sm font-bold leading-normal text-black dark:text-gray-400">04/12/2022</span>
-                        </th>
-                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <span class="text-sm font-bold leading-normal text-black dark:text-gray-400"> 4</span>
-                        </th>
-                        <td class="py-4 px-6">
-                            <span class="text-sm font-bold leading-normal text-purple-500"> R$ 100,00</span>
-                        </td>
-                        <td class="py-4 px-6">
-                            <span class="text-sm font-bold leading-normal text-emerald-500">2 </span>
-                        </td>
-                        <td class="py-4 px-6">
-                            <span class="text-sm font-bold leading-normal text-red-500">1 </span>
-                        </td>
-                        <td class="py-4 px-6">
-                            <span class="text-sm font-bold leading-normal text-yellow-500">1 </span>
-                        </td>
-                        <td class="py-4 px-6">
-                            <div class="flex gap-2">
+                    </th>
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <span class="text-sm font-bold leading-normal text-black dark:text-gray-400"> 4</span>
+                    </th>
+                    <td class="py-4 px-6">
+                        <span class="text-sm font-bold leading-normal text-purple-500"> R$ 100,00</span>
+                    </td>
+                    <td class="py-4 px-6">
+                        <span class="text-sm font-bold leading-normal text-emerald-500">2 </span>
+                    </td>
+                    <td class="py-4 px-6">
+                        <span class="text-sm font-bold leading-normal text-red-500">1 </span>
+                    </td>
+                    <td class="py-4 px-6">
+                        <span class="text-sm font-bold leading-normal text-yellow-500">1 </span>
+                    </td>
+                    <td class="py-4 px-6">
+                        <div class="flex gap-2">
                                 <span v-show="true" class="text-sm font-bold leading-normal text-emerald-500">+ R$ 30,00
                                 </span>
-                                <span v-show="false" class="text-sm font-bold leading-normal text-red-500">- R$ 10,00
+                            <span v-show="false" class="text-sm font-bold leading-normal text-red-500">- R$ 10,00
                                 </span>
-                            </div>
-                        </td>
-                        <td class="py-4 px-6">
-                            <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
-                                <font-awesome-icon class="text-emerald-500 mr-3" icon="fa-solid fa-up-long" />
-                                <span class="font-semibold">4% </span>
-                            </p>
-                        </td>
-                        <td class="py-4 px-6">
-                            <span class="text-sm font-bold leading-normal text-cyan-500">+ R$ 100,00 </span>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                    <td class="py-4 px-6">
+                        <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
+                            <font-awesome-icon class="text-emerald-500 mr-3" icon="fa-solid fa-up-long"/>
+                            <span class="font-semibold">4% </span>
+                        </p>
+                    </td>
+                    <td class="py-4 px-6">
+                        <span class="text-sm font-bold leading-normal text-cyan-500">+ R$ 100,00 </span>
+                    </td>
+                </tr>
 
                 </tbody>
             </table>
@@ -274,7 +274,8 @@
 
             <template #body>
 
-                <tabs variant="underline" v-model="activeTab" class="p-5"> <!-- class appends to content DIV for all tabs -->
+                <tabs variant="underline" v-model="activeTab" class="p-5">
+                    <!-- class appends to content DIV for all tabs -->
                     <tab name="management" title="Gerênciamento">
                         <div class="grid md:grid-cols-4 gap-3">
                             <the-card href="#" class="w-full">
@@ -296,15 +297,16 @@
                                                     class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
                                                 <font-awesome-icon
                                                     class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                                    icon="fa-solid fa-bullseye" />
+                                                    icon="fa-solid fa-bullseye"/>
                                             </div>
                                         </div>
 
                                     </div>
 
                                     <div class="mt-6 w-full">
-                                        <Progress :labelProgress="true" labelPosition="outside" size="xl" color="green" label=""
-                                            :progress="(takeProgress > 100) ? 100 : takeProgress"></Progress>
+                                        <Progress :labelProgress="true" labelPosition="outside" size="xl" color="green"
+                                                  label=""
+                                                  :progress="(takeProgress > 100) ? 100 : takeProgress"></Progress>
                                     </div>
 
                                 </div>
@@ -325,13 +327,14 @@
                                             <div class="inline-block w-12 h-12 text-center rounded-md bg-red-500">
                                                 <font-awesome-icon
                                                     class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                                    icon="fa-solid fa-ban" />
+                                                    icon="fa-solid fa-ban"/>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mt-6 w-full">
-                                        <Progress :labelProgress="true" labelPosition="outside" size="xl" color="red" label=""
-                                            :progress="stopProgress"></Progress>
+                                        <Progress :labelProgress="true" labelPosition="outside" size="xl" color="red"
+                                                  label=""
+                                                  :progress="stopProgress"></Progress>
                                     </div>
                                 </div>
                             </the-card>
@@ -354,15 +357,15 @@
                                                     class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
                                                 <font-awesome-icon
                                                     class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"
-                                                    icon="fa-solid fa-bullseye" />
+                                                    icon="fa-solid fa-bullseye"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="">
                                     <Progress :labelProgress="true" labelPosition="outside" size="xl" :color="plusOne"
-                                        :label="plusOneString"
-                                        :progress="(ManagementPieSeries > 100) ? 100 : ManagementPieSeries"></Progress>
+                                              :label="plusOneString"
+                                              :progress="(ManagementPieSeries > 100) ? 100 : ManagementPieSeries"></Progress>
                                 </div>
                             </the-card>
 
@@ -373,15 +376,17 @@
                                         Placar</h5>
                                 </div>
                                 <div class="flex justify-center justify-content-around">
-                                    <span class="text-2xl font-bold leading-normal text-emerald-500 mr-2">{{ win }} -</span>
+                                    <span class="text-2xl font-bold leading-normal text-emerald-500 mr-2">{{
+                                            win
+                                        }} -</span>
 
                                     <span class="text-2xl font-bold leading-normal text-red-500 mr-2">{{
                                             loss
-                                    }} -</span>
+                                        }} -</span>
 
                                     <span class="text-2xl font-bold leading-normal text-yellow-500 mr-2">{{
                                             draw
-                                    }} </span>
+                                        }} </span>
                                 </div>
                             </the-card>
                         </div>
@@ -390,9 +395,9 @@
                                 <div class="grid md:grid-cols-6 md:gap-6">
                                     <div class="mb-6">
                                         <label for="countries"
-                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ativo</label>
+                                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ativo</label>
                                         <select v-model="tradeForm.asset" id="countries"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                             <option selected disabled>Selecione o ativo</option>
                                             <option value="EUR/USD">EUR/USD</option>
                                             <option value="GBP/USD">GBP/USD</option>
@@ -402,21 +407,27 @@
                                     </div>
                                     <div class="mb-6">
                                         <Input @keyup="calcIncome" v-model="tradeForm.payout" placeholder="87%"
-                                            label="Payout" />
+                                               label="Payout"/>
                                     </div>
                                     <div class="mb-6">
-                                        <Input @keyup="calcIncome" v-model="tradeForm.value" placeholder="R$ 50,00"
-                                            label="Entrada" />
+                                        <CurrencyInput @keyup="calcIncome" v-model="tradeForm.value" label="Entrada"
+                                                       placeholder="R$ 26,00"/>
                                     </div>
                                     <div class="mb-6">
-                                        <Input class=" font-bold text-emerald-500" v-model="tradeForm.income" disabled
-                                            placeholder="" label="Lucro" />
+
+
+                                        <label for="first_name"
+                                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lucro</label>
+                                        <input v-model="tradeForm.income" type="text" disabled id="first_name"
+                                               class="bg-gray-50 border border-gray-300 font-bold text-emerald-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                               placeholder="John" required>
+
                                     </div>
                                     <div class="mb-6">
                                         <label for="countries"
-                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operacional</label>
+                                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Operacional</label>
                                         <select v-model="tradeForm.operational" id="countries"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                             <option selected disabled>Selecione o operacional</option>
                                             <option value="Retração M5">Retração M5</option>
                                             <option value="Suporte e Resistencia">Suporte e Resistência</option>
@@ -426,10 +437,11 @@
                                     </div>
                                     <div class="mb-6">
                                         <label for="countries"
-                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de
+                                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo
+                                            de
                                             ordem</label>
                                         <select v-model="tradeForm.orderType" id="countries"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                             <option selected value="CALL">COMPRA</option>
                                             <option value="PUT">VENDA</option>
                                         </select>
@@ -440,103 +452,136 @@
                         <div class="grid md:grid-cols-2">
                             <div class="mt-5 p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-2">
                                 <textarea v-model="tradeForm.observation" id="message" rows="4"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Observações"></textarea>
+                                          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                          placeholder="Observações"></textarea>
                             </div>
                             <div class="mt-5 flex items-center justify-center gap-4 ">
-                                <Button @click="scoreWin" :disabled="tradeForm.processing" variant="success" size="lg" class="uppercase">
+                                <Button @click="scoreWin" :disabled="tradeForm.processing" variant="success" size="lg"
+                                        class="uppercase">
                                     Win
                                 </Button>
-                                <Button @click="scoreDraw" :disabled="tradeForm.processing" variant="warning" size="lg" class="uppercase">
+                                <Button @click="scoreDraw" :disabled="tradeForm.processing" variant="warning" size="lg"
+                                        class="uppercase">
                                     Empate
                                 </Button>
-                                <Button @click="scoreLoss" :disabled="tradeForm.processing" variant="danger" size="lg" class="uppercase">
+                                <Button @click="scoreLoss" :disabled="tradeForm.processing" variant="danger" size="lg"
+                                        class="uppercase">
                                     Loss
                                 </Button>
                             </div>
                         </div>
                     </tab>
                     <tab name="strategy" title="Estratégias">
-                        <tabs v-model="activeTabStrategy" class="p-5"> <!-- class appends to content DIV for all tabs -->
+                        <tabs v-model="activeTabStrategy" class="p-5"><!-- class appends to content DIV for all tabs -->
                             <tab name="2x1" title="2x1">
 
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="mb-6">
-                                        <Input @keyup="calcIncome" v-model="tradeForm.value" placeholder="R$ 50,00"
-                                            label="Entrada" />
+                                        <CurrencyInput @keyup="calcIncome" v-model="tradeForm.value" label="Entrada"
+                                                       placeholder="R$ 26,00"/>
                                     </div>
                                     <div class="mb-6">
                                         <Input @keyup="calcIncome" v-model="tradeForm.payout" placeholder="87%"
-                                            label="Payout" />
+                                               label="Payout"/>
                                     </div>
                                 </div>
-                                
+
                                 <div class="overflow-x-auto relative">
                                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                            <tr>
-                                                <th scope="col" class="py-3 px-6">
-                                                    Entrada
-                                                </th>
-                                                <th scope="col" class="py-3 px-6">
-                                                    Payout
-                                                </th>
-                                                <th scope="col" class="py-3 px-6">
-                                                    Lucro
-                                                </th>
-                                            </tr>
+                                        <thead
+                                            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                        <tr>
+                                            <th scope="col" class="py-3 px-6">
+                                                Entrada
+                                            </th>
+                                            <th scope="col" class="py-3 px-6">
+                                                Payout
+                                            </th>
+                                            <th scope="col" class="py-3 px-6">
+                                                Lucro
+                                            </th>
+                                        </tr>
                                         </thead>
                                         <tbody>
 
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    {{ tradeForm.value }}
-                                                </th>
-                                                <td class="py-4 px-6">
-                                                    {{ tradeForm.payout }} 
-                                                </td>
-                                                <td class="py-4 px-6">
-                                                    {{  tradeForm.income }}
-                                                </td>
-                                           
-                                            </tr>
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    {{ nextEntry }}
-                                                </th>
-                                                <td class="py-4 px-6">
-                                                    {{ tradeForm.payout }} 
-                                                </td>
-                                                <td class="py-4 px-6">
-                                                    {{  nextEntryIncome }}
-                                                </td>
-                             
-                                            </tr>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                            <th scope="row"
+                                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <span class=" font-bold text-cyan-500"> {{
+                                                        (tradeForm.value) ? tradeForm.value.toLocaleString('pt-br', {
+                                                            style: 'currency',
+                                                            currency: 'BRL'
+                                                        }) : 0
+                                                    }}</span>
+                                            </th>
+                                            <td class="py-4 px-6">
+                                                {{ tradeForm.payout }}
+                                            </td>
+                                            <td class="py-4 px-6">
+                                                <span class=" font-bold text-emerald-500">  {{
+                                                        (tradeForm.income) ? tradeForm.income.toLocaleString('pt-br', {
+                                                            style: 'currency',
+                                                            currency: 'BRL'
+                                                        }) : 0
+                                                    }}</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                            <th scope="row"
+                                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <span class=" font-bold text-cyan-500">  {{
+                                                        (nextEntry) ? nextEntry.toLocaleString('pt-br', {
+                                                            style: 'currency',
+                                                            currency: 'BRL'
+                                                        }) : 0
+                                                    }}</span>
+                                            </th>
+                                            <td class="py-4 px-6">
+                                                {{ tradeForm.payout }}
+                                            </td>
+                                            <td class="py-4 px-6">
+                                                <span class=" font-bold text-emerald-500"> {{
+                                                        (nextEntryIncome) ? nextEntryIncome.toLocaleString('pt-br', {
+                                                            style: 'currency',
+                                                            currency: 'BRL'
+                                                        }) : 0
+                                                    }}</span>
+                                            </td>
+
+                                        </tr>
                                         </tbody>
+                                        <p class="mt-10 text-center font-bold text-2xl text-emerald-500">Lucro total: R$
+                                            {{
+                                                (totalProfit) ? totalProfit.toLocaleString('pt-br', {
+                                                    style: 'currency',
+                                                    currency: 'BRL'
+                                                }) : 0
+                                            }}</p>
                                     </table>
                                 </div>
 
                             </tab>
                             <tab name="second" title="Second">
-                            Lorem...
+                                Lorem...
                             </tab>
                             <tab name="third" title="Third">
-                            Lorem...
+                                Lorem...
                             </tab>
                             <tab name="fourth" title="Fourth" :disabled="true">
-                            Lorem...
+                                Lorem...
                             </tab>
                         </tabs>
                     </tab>
                     <tab name="third" title="Third">
-                    Lorem...
+                        Lorem...
                     </tab>
                     <tab name="fourth" title="Fourth" :disabled="true">
-                    Lorem...
+                        Lorem...
                     </tab>
                 </tabs>
 
- 
+
             </template>
         </Modal>
 
@@ -545,21 +590,21 @@
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
-import { TheCard, Modal, Input, Progress, Badge, Tabs, Tab  } from 'flowbite-vue'
+import {TheCard, Modal, Input, Progress, Badge, Tabs, Tab} from 'flowbite-vue'
 import Button from '@/Components/Button.vue'
-import { computed, reactive, ref, watch } from 'vue'
-import { useForm } from "@inertiajs/inertia-vue3";
-import { isDark } from '@/Composables'
-import { ChartBarIcon } from "@heroicons/vue/outline";
-import { useToast } from 'vue-toast-notification';
+import {computed, reactive, ref, watch} from 'vue'
+import {useForm} from "@inertiajs/inertia-vue3";
+import {isDark} from '@/Composables'
+import {ChartBarIcon} from "@heroicons/vue/outline";
+import {useToast} from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
+import CurrencyInput from "@/Shared/CurrencyInput.vue";
 
 const formatter = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
     minimumFractionDigits: 2,
 });
-
 
 
 const activeTab = ref('management')
@@ -570,8 +615,8 @@ const $toast = useToast();
 const tradeForm = useForm({
     asset: 'EUR/USD',
     payout: '82',
-    value: '26',
-    income: '0',
+    value: 26,
+    income: 0,
     orderType: 'CALL',
     operational: 'Retração M5',
     observation: 'Digite sua observação',
@@ -580,38 +625,37 @@ const tradeForm = useForm({
 
 const nextEntry = ref(0);
 const nextEntryIncome = ref(0);
-
-
+const totalProfit = ref(0)
 
 function submitTradeForm(result) {
     tradeForm.post('/gerenciamento', {
-    onSuccess: (page) => {
+        onSuccess: (page) => {
 
-        if(result === 'win') {
-            $toast.success(`é Take + ${tradeForm.income}`, {
-                // override the global option
-                position: 'top-right'
-            })
-        }else if(result === 'loss') {
-            $toast.error(`Loss - ${formatter.format(tradeForm.value)}`, {
-                // override the global option
-                position: 'top-right'
-            })
-        }else{
-            $toast.warning(`Empate = R$ 0,0`, {
-                // override the global option
-                position: 'top-right'
-            })
-        }
-    },
+            if (result === 'win') {
+                $toast.success(`é Take + ${tradeForm.income}`, {
+                    // override the global option
+                    position: 'top-right'
+                })
+            } else if (result === 'loss') {
+                $toast.error(`Loss - ${formatter.format(tradeForm.value)}`, {
+                    // override the global option
+                    position: 'top-right'
+                })
+            } else {
+                $toast.warning(`Empate = R$ 0,0`, {
+                    // override the global option
+                    position: 'top-right'
+                })
+            }
+        },
 
-    onError: (errors) => {
-      $toast.error('Oops, tente novamente mais tarde...', {
-        // override the global option
-        position: 'top-right'
-      })
-    },
-  })
+        onError: (errors) => {
+            $toast.error('Oops, tente novamente mais tarde...', {
+                // override the global option
+                position: 'top-right'
+            })
+        },
+    })
 }
 
 const management = useForm({
@@ -716,15 +760,15 @@ let ManagementPieSeriesMessage = ref('Aceitável')
 const calcIncome = () => {
     const incomeResult = (tradeForm.payout / 100) * tradeForm.value
 
-    nextEntry.value =  parseInt(tradeForm.value) + incomeResult
-    nextEntryIncome.value = formatter.format((tradeForm.payout / 100) * nextEntry.value); 
+    nextEntry.value = tradeForm.value + incomeResult
+    nextEntryIncome.value = (tradeForm.payout / 100) * nextEntry.value;
 
-    tradeForm.income = formatter.format(incomeResult);
-    
+    tradeForm.income = incomeResult;
+
+    totalProfit.value = tradeForm.income + nextEntryIncome.value;
+
     ManagementPieSeries.value = ((tradeForm.value === '') ? 0 : parseInt(tradeForm.value) * 100) / 25
 
-    console.log(parseInt(tradeForm.value))
-    console.log(parseInt(incomeResult))
 }
 
 calcIncome();
@@ -752,9 +796,11 @@ const isShowModal = ref(false)
 function closeModal() {
     isShowModal.value = false
 }
+
 function showModal() {
     isShowModal.value = true
 }
+
 //END MODAL
 
 //PIE CHART

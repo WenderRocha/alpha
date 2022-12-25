@@ -50,7 +50,8 @@
                             <Input v-model="walletForm.name" placeholder="Nubank, IQ Option..." label="Nome"/>
                         </div>
                         <div class="mb-6">
-                            <CurrencyInput v-model="walletForm.initialDeposit" label="Depósito inicial" placeholder="R$ 150,00"/>
+                            <CurrencyInput v-model="walletForm.initialDeposit" label="Depósito inicial"
+                                           placeholder="R$ 150,00"/>
                         </div>
                     </div>
                 </div>
@@ -73,7 +74,8 @@
                             <Input v-model="walletOptionsForm.name" placeholder="Nubank, IQ Option..." label="Nome"/>
                         </div>
                         <div class="mb-6">
-                            <CurrencyInput v-model="walletOptionsForm.initialDeposit" label="Depósito inicial" placeholder="R$ 150,00"/>
+                            <CurrencyInput v-model="walletOptionsForm.initialDeposit" label="Depósito inicial"
+                                           placeholder="R$ 150,00"/>
                         </div>
                     </div>
 
@@ -103,10 +105,12 @@
 
                     <div v-if="walletOptionsForm.managementType === 'compound'" class="grid grid-cols-2 gap-4">
                         <div class="mb-6">
-                            <Input v-model="walletOptionsForm.takeProfit" placeholder="Digite apenas números" label="Take Ex: 10%"/>
+                            <Input v-model="walletOptionsForm.takeProfit" placeholder="Digite apenas números"
+                                   label="Take Ex: 10%"/>
                         </div>
                         <div class="mb-6">
-                            <Input v-model="walletOptionsForm.stopLoss" placeholder="Digite apenas números" label="Stop Ex: 5%"/>
+                            <Input v-model="walletOptionsForm.stopLoss" placeholder="Digite apenas números"
+                                   label="Stop Ex: 5%"/>
                         </div>
                     </div>
 
@@ -122,7 +126,8 @@
 
                     <div class="grid grid-cols-2 gap-4">
                         <div class="mb-6">
-                            <CurrencyInput v-model="walletOptionsForm.minWithdraw" label="Valor minimo para saque" placeholder="R$ 50,00"/>
+                            <CurrencyInput v-model="walletOptionsForm.minWithdraw" label="Valor minimo para saque"
+                                           placeholder="R$ 50,00"/>
                         </div>
                         <div class="mb-6">
                             <label for="currency"
@@ -217,7 +222,7 @@ import {TheCard, Modal, Input, Progress, Badge, Alert, Toast, Spinner} from 'flo
 import Button from '@/Components/Button.vue'
 import {computed, onBeforeUnmount, onMounted, reactive, ref, watch} from 'vue'
 import {useForm} from "@inertiajs/inertia-vue3";
-import  CurrencyInput  from "@/Shared/CurrencyInput.vue";
+import CurrencyInput from "@/Shared/CurrencyInput.vue";
 
 import {
     CheckIcon,
