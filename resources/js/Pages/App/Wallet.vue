@@ -38,12 +38,14 @@
         <Modal v-if="isShowModal" @close="closeModal">
             <template #header>
                 <div class="flex items-center text-lg">
-                    {{ walletForm.name }}
+                    {{ walletForm.name || walletOptionsForm.name }}
                 </div>
             </template>
             <template #body>
 
-                <div class="grid grid-cols-2 gap-4">
+                
+                    <div v-if="!binaryOptions">
+                        <div class="grid grid-cols-2 gap-4">
                     <div class="mb-6">
                         <Input v-model="walletForm.name" placeholder="Nubank, IQ Option..." label="Nome" />
                     </div>
@@ -51,20 +53,32 @@
                         <Input v-model="walletForm.initialDeposit" placeholder="R$ 150,00" label="Deposito inicial" />
                     </div>
                 </div>
+                    </div>
+        
 
                 <div class="mb-6">
-                        <label for="default-toggle" class="inline-flex relative items-center cursor-pointer">
-                            <input type="checkbox" v-model="binaryOptions" id="default-toggle" class="sr-only peer">
+                        <label @click="formsReset" for="binaryOptions" class="inline-flex relative items-center cursor-pointer">
+                            <input type="checkbox" v-model="binaryOptions" id="binaryOptions" class="sr-only peer">
                             <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                             <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Carteira de opções binárias ?</span>
                         </label>
                     </div>
 
                 <div v-if="binaryOptions">
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mb-6">
+                        <Input v-model="walletOptionsForm.name" placeholder="Nubank, IQ Option..." label="Nome" />
+                    </div>
+                    <div class="mb-6">
+                        <Input v-model="walletOptionsForm.initialDeposit" placeholder="R$ 150,00" label="Deposito inicial" />
+                    </div>
+                </div>
+
                     <div class="grid grid-cols-2 gap-4">
                     <div class="mb-6">
                         <label for="managementType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tipo de Gerênciamento</label>
-                        <select v-model="walletForm.managementType"  id="managementType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select v-model="walletOptionsForm.managementType"  id="managementType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="fixed">Fixo</option>
                             <option value="compound">Juros Composto</option>
                         </select>
@@ -73,39 +87,39 @@
                     
                     <div class="mb-6 flex items-center justify-center">
                         <label for="default-toggle" class="inline-flex relative items-center cursor-pointer">
-                            <input v-model="walletForm.mainWallet" type="checkbox" value="" id="default-toggle" class="sr-only peer">
+                            <input v-model="walletOptionsForm.mainWallet" type="checkbox" value="" id="default-toggle" class="sr-only peer">
                             <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                             <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Carteira principal</span>
                         </label>
                     </div>
                 </div>
 
-                <div v-if="walletForm.managementType === 'compound'" class="grid grid-cols-2 gap-4">
+                <div v-if="walletOptionsForm.managementType === 'compound'" class="grid grid-cols-2 gap-4">
                     <div class="mb-6">
-                        <Input v-model="walletForm.takeProfit" type="number" placeholder="Ex: 10%" label="Take Ex: 10%" />
+                        <Input v-model="walletOptionsForm.takeProfit"  placeholder="Ex: 10%" label="Take Ex: 10%" />
                     </div>
                     <div class="mb-6">
-                        <Input v-model="walletForm.stopLoss" type="number" placeholder="Ex: 5%" label="Stop Ex: 5%" />
+                        <Input v-model="walletOptionsForm.stopLoss"  placeholder="Ex: 5%" label="Stop Ex: 5%" />
                     </div>
                 </div>
 
                 <div v-else class="grid grid-cols-2 gap-4">
                     <div class="mb-6">
-                        <Input v-model="walletForm.takeProfit" placeholder="R$ 10,00" label="Take Ex: R$ 10,00" />
+                        <Input v-model="walletOptionsForm.takeProfit" placeholder="R$ 10,00" label="Take Ex: R$ 10,00" />
                     </div>
                     <div class="mb-6">
-                        <Input v-model="walletForm.stopLoss" placeholder="R$ 5,00" label="Stop Ex: R$ 5,00" />
+                        <Input v-model="walletOptionsForm.stopLoss" placeholder="R$ 5,00" label="Stop Ex: R$ 5,00" />
                     </div>
                 </div>
 
                 
                 <div class="grid grid-cols-2 gap-4">
                     <div class="mb-6">
-                        <Input v-model="walletForm.minWithdraw" placeholder="10%" label="Minimo para saque" />
+                        <Input v-model="walletOptionsForm.minWithdraw" placeholder="10%" label="Minimo para saque" />
                     </div>
                     <div class="mb-6">
                         <label for="currency" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Moeda</label>
-                        <select v-model="walletForm.currency" id="currency" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select v-model="walletOptionsForm.currency" id="currency" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="BRL">BRL</option>
                             <option value="USD">USD</option>
                         </select>
@@ -121,19 +135,41 @@
                         Cancelar
                     </button>
 
-                    <Button v-if="walletForm.processing" :disabled="walletForm.processing"
-                        class="items-center gap-2 max-w-xs" v-slot="{ iconSizeClasses }">
-                        <div class="flex items-center">
-                            <spinner class="mr-2" color="white" size="8" />
-                            <span>Aguarde...</span>
-                        </div>
-                    </Button>
+                    <div v-if="binaryOptions">
+                        <Button v-if="walletForm.processing" :disabled="walletForm.processing"
+                            class="items-center gap-2 max-w-xs" v-slot="{ iconSizeClasses }">
+                            <div class="flex items-center">
+                                <spinner class="mr-2" color="white" size="8" />
+                                <span>Aguarde...</span>
+                            </div>
+                        </Button>
 
-                    <Button v-else @click="submitWalletForm" class="items-center gap-2 max-w-xs"
-                        v-slot="{ iconSizeClasses }">
-                        <CheckIcon aria-hidden="true" :class="iconSizeClasses" />
-                        <span>abrir carteira</span>
-                    </Button>
+                        
+
+                        <Button v-else @click="submitWalletOptionsForm" class="items-center gap-2 max-w-xs"
+                            v-slot="{ iconSizeClasses }">
+                            <CheckIcon aria-hidden="true" :class="iconSizeClasses" />
+                            <span>abrir carteira</span>
+                        </Button>
+                    </div>
+
+                    <div v-else>
+                        <Button v-if="walletForm.processing" :disabled="walletForm.processing"
+                            class="items-center gap-2 max-w-xs" v-slot="{ iconSizeClasses }">
+                            <div class="flex items-center">
+                                <spinner class="mr-2" color="white" size="8" />
+                                <span>Aguarde...</span>
+                            </div>
+                        </Button>
+
+                        
+
+                        <Button v-else @click="submitWalletForm" class="items-center gap-2 max-w-xs"
+                            v-slot="{ iconSizeClasses }">
+                            <CheckIcon aria-hidden="true" :class="iconSizeClasses" />
+                            <span>abrir carteira</span>
+                        </Button>
+                    </div>
 
                 </div>
             </template>
@@ -190,6 +226,13 @@ const binaryOptions = ref(false);
 const $toast = useToast();
 
 const walletForm = useForm({
+    type: 'wallet',
+    name: '',
+    initialDeposit: ''
+})
+
+const walletOptionsForm = useForm({
+    type: 'binaryWallet',
     name: '',
     logo: 'https://img.icons8.com/color/48/000000/wallet--v1.png',
     initialDeposit: '',
@@ -200,6 +243,32 @@ const walletForm = useForm({
     managementType: 'compound',
     mainWallet: false
 })
+
+
+const formsReset = () => {
+    walletOptionsForm.reset()
+    walletForm.reset()
+}
+
+
+function submitWalletOptionsForm() {
+    walletOptionsForm.post('/carteiras', {
+
+        onSuccess: (page) => {
+            $toast.success('Cadastrado com sucesso!', {
+                // override the global option
+                position: 'top-right'
+            })
+        },
+
+        onError: (errors) => {
+            $toast.error('Oops, tente novamente mais tarde...', {
+                // override the global option
+                position: 'top-right'
+            })
+        },
+    })
+}
 
 function submitWalletForm() {
     walletForm.post('/carteiras', {

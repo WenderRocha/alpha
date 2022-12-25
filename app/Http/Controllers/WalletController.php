@@ -35,7 +35,7 @@ class WalletController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        dd($request->all());
         return redirect()->route('app.wallet');
     }
 
